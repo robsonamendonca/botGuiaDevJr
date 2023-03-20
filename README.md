@@ -59,3 +59,6 @@ Servidor do Discord com o Bot para Testes:
 LRAM's server
 https://discord.gg/c9T3ENER
 
+---
+
+##### <p align="center"> <strong> < Feito por <a href="https://github.com/robsonamendonca"> @robsonamendonca  </a> /> </strong>  :wave:
