@@ -12,12 +12,12 @@ const row = new ActionRowBuilder()
                 },
                 {
                     label: "Beecrowd",
-                    description: "Nossa plataforma de programação competitiva de última geração tem mais de 2.000 testes analíticos e de programação disponíveis em mais de 20 linguagens de programação diferentes. Todos os testes estão disponíveis em Português e Inglês.",
+                    description: "Plataforma tem testes analíticos, programação, em mais de 20 linguagens de programação.",
                     value: "beecrowd"
                 },
                 {
                     label: "The Huxley",
-                    description: "Possui uma base com mais de 1000 problemas para você resolver. Você pode achar facilmente problemas de seu interesse pelo nível de dificuldade e tópicos como: String, Array, Grafo, dentre muitos outros.",
+                    description: "Você pode achar facilmente problemas de seu interesse pelo nível de dificuldade e tópicos.",
                     value: "TheHuxley"
                 }
             )
@@ -26,7 +26,7 @@ const row = new ActionRowBuilder()
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("desafios")
-        .setDescription("Plataformas oferece uma variedade de desafios de programação, desde problemas de lógica simples até problemas mais avançados de algoritmos e estruturas de dados."),
+        .setDescription("Plataformas oferece lógica simples até problemas mais avançados de algoritmos e estruturas de dados."),
 
     async execute(interaction) {
         await interaction.reply({content: "Selecione uma das Plataformas abaixo:", components: [row]})
