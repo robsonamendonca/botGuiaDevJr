@@ -38,6 +38,7 @@ client.login(TOKEN);
 client.on(Events.InteractionCreate, async interaction => {
     if (interaction.isStringSelectMenu()){
         const selected = interaction.values[0]
+        //doc_tech
         if (selected == "javascript"){
             await interaction.reply("Documentação do Javascript: https://developer.mozilla.org/en-US/docs/Web/JavaScript")
         } else if (selected == "python"){
@@ -53,6 +54,14 @@ client.on(Events.InteractionCreate, async interaction => {
         } else if (selected == "discordjs"){
             await interaction.reply("Documentação do Discord.js: https://discordjs.guide/#before-you-begin")
         }
+        //desafios
+        if (selected == "NepsAcademy"){
+            await interaction.reply("Neps Academy - https://neps.academy/br/exercises")
+        } else if (selected == "beecrowd"){
+            await interaction.reply("beecrowd - https://www.beecrowd.com.br/judge/pt/login")
+        } else if (selected == "TheHuxley"){
+            await interaction.reply("The Huxley - https://www.thehuxley.com/problems?page=1&problemType=ALGORITHM")
+        }        
     }    
     if (!interaction.isChatInputCommand())
         return
