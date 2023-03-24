@@ -1,5 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
+const Discord = require("discord.js");
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -11,15 +12,19 @@ const path = require("node:path");
 const commandsPath = path.join(__dirname, "commands");
 const commandsFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"));
 
+//t({ intents: [ "Guilds", "GuildMembers", "MessageContent", "GuildMessages" ]});
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
 client.commands = new Collection();
+
 
 for (const file of commandsFiles) {
     const filePath = path.join(commandsPath, file);
     const command = require(filePath);
     if ("data" in command && "execute" in command) {
         client.commands.set(command.data.name, command)
+
     } else {
         console.log(`Comando em  ${filePath} esta sem data ou execute!`);
     }
@@ -28,7 +33,15 @@ for (const file of commandsFiles) {
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
-    console.log(`Ready! Logged in as ${c.user.tag}`);
+    
+    console.log(`Estou online em ${c.user.tag}`)
+
+    c.user.setActivity({ 
+        name: 'GuiaDevJr Bot',
+        type: c.application.Playing
+    });  
+       
+
 });
 
 // Log in to Discord with your client's token
